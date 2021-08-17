@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Recipes</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        h3 {
+            color: #d1633c;
+            font-size: 1.5em
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: red">RECIPES</h1>
+    {% for post in object_list %}
+        <hr>
+        <a href="{% url 'detail' post.pk %}"><h3>{{post.name}}</h3></a>
+        <img src= "{{media_url}}{{post.image}}" width="240" height="200" alt="{{post.name}}">
+        <br>
+        <br>
+    {% endfor %}
+    <p>
+        <a href="{% url 'home' %}"> Return to homepage</a>
+            |
+        <a href="{% url 'post' %}"> <b>Get <i>free</i> Recipe</b></a>
+            |
+        <a href="{% url 'form' %}" > <b>Place an order</b></a>
+    </p>
+</body>
+{% endblock content %}
+</html>

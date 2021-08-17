@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+{% block content %}
+{% load static %}
+<head>
+	<meta charset="utf-8">
+    <title>K-HILLS Recipes</title>
+
+	<style>
+	body {
+		backgroud-color: #faf2e4;
+		background-image: url({% static 'images/Tapenade.png' %});
+		margin: 0 10%:
+		font-family: sans-serif:
+		}
+	h1 {
+		text-decoration: overline;
+		text-align: center;
+		font-family: sans-serif;
+		font-weight: normal;
+		text-transform: capitalize;
+		letter-spacing: 18px;
+		border-bottom: 1px solid #57bidc;
+		margin-top: 30px:
+		}
+	h2 {
+		color: #d1633c;
+		font-size: 1em
+		}
+	blockquote {
+		text-align: left;
+		}
+	fieldset {
+		width: 50%;
+		background: white;
+	}
+	a {
+		hover: red;
+	}
+	</style>
+
+</head>
+<body>
+	<h1>
+	<img src="{% static 'images/hills.png.png' %}" alt="Hills"><br>
+		<u>Ketering Hills</u>
+	</h1>
+	<hr>
+	<fieldset>
+	<blockquote>
+		<p>you may like to try out this recipe at home and contact us for more:</p>
+	<img src="{{media_url}}{{object.image}}" width="240" height="200" alt="logo">
+	<br>
+		<h3>{{ object.name }}</h3>
+		<p>
+			{{ object.description }}
+		</p>
+			<h2>Ingredients</h2>
+		<ul>
+			<li>{{ object.ingredients }}</li>
+		</ul>
+			<h2>Instructions</h2>
+		<ul>
+			<li>{{object.instructions}}</li>
+		</ul>
+
+	</blockquote>
+
+	<hr>
+		<p>
+		  <a href="{% url 'home' %}"> Return to homepage</a>
+		  |
+		  <a href="{% url 'post' %}"> <b>Get <i>free</i> Recipe</b></a>
+		  |
+		  <a href="{% url 'form' %}" > <b>Place an order</b></a>
+		</p>
+	</fieldset>
+</body>
+{% endblock content %}
+</html>
