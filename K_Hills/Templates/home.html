@@ -1,0 +1,85 @@
+<html>
+{% load static %}
+{% block content %}
+<head>
+	<meta charset="utf-8">
+	<title> K-HILLS </title>
+
+	<style>
+	body {
+		/* background-color: white; */
+		font-weight: bold;
+		background-image: url("{% static 'images/Tapenade - copy.png' %}");
+		background-size: 100%;
+		background-repeat: no-repeat;
+		background-position: center 100px;
+		margin: 0 10%:
+		font-family: sans-serif:
+		}
+	h1 {
+		text-decoration: overline;
+		text-align: center;
+		font-family: sans-serif;
+		font-weight: normal;
+		text-transform: capitalize;
+		letter-spacing: 18px;
+		border-bottom: 1px solid #57bidc;
+		margin-top: 30px:
+		}
+	h2 {
+		color: #d1633c;
+		font-size: 1em
+		}
+	h4 {
+		text-align: left;
+		font-family: sans-serif;
+		font-weight: normal;
+		border-bottom: 1px solid #57bidc;
+		margin-top: 30px:
+		color: #d1633c;
+		}
+	fieldset {
+		background-color: white;
+		opacity: .78;
+		}
+	#hills {
+		opacity: 1;
+		}
+	a {
+		hover: red;
+	}
+
+	</style>
+
+</head>
+<body>
+	<div id="hills"><img src="{% static 'images/Hills.png.png' %}" width="340" height="400" alt="logo"><br></div>
+	<fieldset>
+		<h1>
+			<u>Ketering Hills</u>
+		</h1>
+		<ul>
+			<li><h2>The Restaurant </h2>
+				The black Goose bistro offers casual lunch and diner fare in a relaxed atmosphare.<br>
+				The menu changes regularly to hiligh the new local ingridients.
+			</li>
+			<li><h2> Catering </h2>
+				You have fun, we handle the cooking. The Black Goose Catering can handle events<br>
+				from snacks for a meetup to elegant coorporate fundraisers.
+			</li>
+			<li><h2> Location and Hours </h2>
+				Seekonk, Massasusets: Monday through Thursday 11am to 9pm
+			</li>
+		</ul>
+		<hr>
+		<p>
+		  <a href="{% url 'home' %}"> Return to homepage</a>
+		  |
+		  <a href="{% url 'post' %}"> <b>Get <i>free</i> Recipe</b></a>
+		  |
+		  <a href="{% url 'form' %}"> <b>Place an order</b></a>
+		</p>
+	</fieldset>
+</body>
+{% endblock content %}
+</html>

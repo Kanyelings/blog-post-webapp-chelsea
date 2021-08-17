@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Ketering Hills Order-Form</title>
+
+    <style>
+        body {
+            background-image: url({% static 'images/pizza.png' %});
+            background-size: 100%;
+            opacity: 1;
+            background-repeat: repeat;
+            margin: 0 10%:
+            font-family: sans-serif:
+            }
+        h2 {
+            color: #d1633c;
+            font-size: 1em
+            }
+        h4 {
+            text-align: left;
+            font-family: sans-serif;
+            font-weight: normal;
+            border-bottom: 1px solid #57bidc;
+            margin-top: 30px:
+            color: #d1633c;
+            }
+        fieldset {
+            width: 50%;
+            background: orange;
+            opacity: .8;
+            }
+        #top {
+            /* background-color: white; */
+            text-align: center;
+            opacity: 1;
+            color: black;
+            }
+        legend {
+            background-color: white;
+            border: black;
+            color: green;
+            }
+        #temp{
+            background-color: white;
+        }
+        a {
+		    hover: red;
+	    }
+    </style>
+
+</head>
+<body>
+    <div id="top">
+        <h1><img src="{% static 'images/Hills.png.png' %}" width="240" height="300" alt="logo"></h1>
+        <h1><u>KETERING HILLS</u> | <u>PIZZA-ON-DEMAND</u></h1>
+    </div>
+<form>
+    <fieldset><legend><h3>Your info</h3></legend>
+    <ul>
+        <li> Full name <input name="Name" type="text"></li><br>
+        <li> Adress <input name="aderess" type="text"></li><br>
+        <li> Email adress <input name="e_mail" type="email"></li><br>
+        <li> tel <input name="tel" type="tel"></li><br>
+        <li> Enter adress discription <input name="Name" type="text"></li><br>
+    </ul>
+    </fieldset>
+
+    <fieldset><legend><h3>Design your dream Pizza</h3></legend>
+    <h3>Piza crust (choose one): </h3>
+    <ul>
+        <li><input type="radio" name="crust" value="classic white">Classic white</li>
+        <li><input type="radio" name="crust" value="multi grain">Multi grain</li>
+        <li><input type="radio" name="crust" value="cheese suffed">Cheese suffed</li>
+        <li><input type="radio" name="crust" value="gluten_free">Gluten-free</li>
+    </ul>
+    <br>
+
+    <h3>Toppings (choose as many as you want):</h3>
+    <ul>
+        <li><input type="checkbox" name="topping" value="red sauce"> Red sauce </li>
+        <li><input type="checkbox" name="topping" value="white sauce"> white sauce </li>
+        <li><input type="checkbox" name="topping" value="mozarella cheeeze"> Mozarella cheeze </li>
+        <li><input type="checkbox" name="topping" value="peperoni"> Peperoni </li>
+        <li><input type="checkbox" name="topping" value="mushroom"> mushroom </li>
+        <li><input type="checkbox" name="topping" value="achovies"> Anchovies </li>
+    </ul><br>
+
+        <p><b>Number of pizza: </b><input type="number" min="1" max="6"</p>
+        <hr>
+        <input style="background: green" type="submit" value="place order" >
+    </fieldset>
+
+    <fieldset>
+        <div id="temp">
+          <p>
+              <a href="{% url 'home' %}"> Return to homepage</a>
+              |
+              <a href="{% url 'post' %}"> <b>Get <i>free</i> Recipe</b></a>
+              |
+              <a href="{% url 'form' %}" > <b>Place an order</b></a>
+          </p>
+        </div>
+    </fieldset>
+
+</form>
+
+</body>
+</html>
